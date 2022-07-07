@@ -1,8 +1,9 @@
+//Components
+import Main from "./Route/Main";
+
 function App() {
   return (
-    <div className="App">
-      <p className="display-4 text-center">E-commerce</p>
-    </div>
+    <Main/>
   );
 }
 
