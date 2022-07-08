@@ -1,4 +1,4 @@
-import {Link} from 'react-router-dom'
+import {FcPaid, FcShop} from 'react-icons/fc';
 export default function Menu(){
     return(
         <>
@@ -8,7 +8,10 @@ export default function Menu(){
                     <span className="navbar-toggler-icon"></span>
                 </button>
 
-                <a className="navbar-brand col-lg-1 text-center" href="/cart">My Store</a>
+                <a className="navbar-brand col-lg-1 d-flex flex-column align-items-center" href="/">
+                    My Store
+                    <FcShop size={50}/>
+                </a>
 
                 <div className="collapse navbar-collapse col-lg-11" id="navbarSupportedContent">
 
@@ -31,10 +34,13 @@ export default function Menu(){
                     <div className='col-lg-9 d-flex'>
                         <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
                         <button className="btn btn-info my-2 my-sm-0" type="submit">Search</button>
-                    </div>    
+                    </div>                       
 
-                    <div className='col-lg-1 text-light'>
-                        Carrito
+                    <div className='col-lg-1 d-flex justify-content-center'>
+                        <a href="/cart" className='d-flex flex-column justify-content-center align-items-center'>
+                            <FcPaid size={35} title="shopingcart"/>                            
+                            <span className='text-light font-weight-bold'>$ 0.0</span>
+                        </a>                                                
                     </div>                
                 </div>
             </nav>
