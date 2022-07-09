@@ -3,7 +3,6 @@ import {TYPE} from './types';
 const INITIAL_STATE = {
     products:[],
     loadingProducts:false,
-
     categories:[],
     loadingCategories:false,
 
@@ -14,14 +13,14 @@ const globalState = (state = INITIAL_STATE, {type, payload})=>{
         case TYPE.SAGA_GET_PRODUCTS:
             return{
                 ...state,
-                loadingProducts: true,
-                products: payload,                
+                loadingProducts: true,                                
             };
 
         case TYPE.SET_PRODUCTS:
             return{
                 ...state,
-                loadingProducts: false
+                products: payload,
+                loadingProducts: false,                
             }
 
         case TYPE.SAGA_GET_CATEGORIES:
@@ -35,6 +34,10 @@ const globalState = (state = INITIAL_STATE, {type, payload})=>{
             return{
                 ...state,
                 loadingCategories: false
+            }
+        default:
+            return{
+                ...state
             }
     }
 };

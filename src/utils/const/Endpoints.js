@@ -1,3 +1,3 @@
 export const constAPI = {
-    urlBaseApi:'https://api.escuelajs.co/api/v1',
+    urlBaseApi:'https://fakestoreapi.com',
 };
