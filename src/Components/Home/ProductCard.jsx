@@ -1,7 +1,9 @@
 import {FaPlus} from 'react-icons/fa';
-export default function ProductCard({key, title, price, image}){
+
+export default function ProductCard({title, price, image, cardClicked}){
+
     return(
-        <div className="col-lg-4 d-flex flex-column justify-content-center align-items-center mt-5 mb-5" key={key}>
+        <div className="col-lg-4 d-flex flex-column justify-content-center align-items-center mt-5 mb-5" onClick={cardClicked}>
             <div className="w-25 h-50 d-flex justify-content-center align-items-center">
                 <img className="card-img-top" src={image} alt="Card image cap"/>
             </div>            
@@ -12,7 +14,7 @@ export default function ProductCard({key, title, price, image}){
                     Add to cart 
                     <FaPlus className='ml-2'/>
                 </a>
-            </div>
+            </div>                       
         </div>
     );
 };

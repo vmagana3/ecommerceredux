@@ -1,4 +1,4 @@
-import '../styles/spinnner.css';
+import '../../styles/spinnner.css';
 export default function Spinner(){
     return(
         <div class="d-flex justify-content-center">
