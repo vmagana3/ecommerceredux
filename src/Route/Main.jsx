@@ -9,7 +9,7 @@ import Cart from '../Components/Cart';
 
 export default function Main(){
     return(
-        <>
+        <div>
             <Menu/>
             <BrowserRouter>
                 <Routes>
@@ -18,6 +18,6 @@ export default function Main(){
                 </Routes>
             </BrowserRouter>
             <Footer/>
-        </>        
+        </div>        
     );
 };

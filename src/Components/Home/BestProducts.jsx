@@ -23,8 +23,7 @@ export default function BestProducts(){
                                 <ProductCard
                                     key={index}
                                     title={item.title}  
-                                    price={item.price}
-                                    description={item.description}
+                                    price={item.price}                                    
                                     image={item.image}         
                                 />
                             )) : null}
