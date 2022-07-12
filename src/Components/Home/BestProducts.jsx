@@ -3,6 +3,9 @@ import { useState } from 'react';
 //Redux hooks
 import { useSelector } from 'react-redux';
 
+//Icons
+import {FaArrowRight} from 'react-icons/fa';
+
 //Components
 import ProductCard from './ProductCard';
 import Spinner from '../SharedComponents/Spinner';
@@ -58,7 +61,13 @@ export default function BestProducts(){
                         })
                     }}                
                 />
-            ): null}                    
+            ): null}  
+
+            <div className='w-50 d-flex align-self-center justify-content-center align-items-center mb-5'>
+                <a href='#' className=' h1 text-center font-weight-light mb-5'>See All Products</a>                  
+                <FaArrowRight size={40} className="ml-3 mb-5"/>
+            </div>
+
         </div> 
     );
 };

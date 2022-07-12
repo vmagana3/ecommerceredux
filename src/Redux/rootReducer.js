@@ -3,8 +3,11 @@ import {TYPE} from './types';
 const INITIAL_STATE = {
     products:[],
     loadingProducts:false,
+
     categories:[],
     loadingCategories:false,
+
+    cart:[],
 
 };
 

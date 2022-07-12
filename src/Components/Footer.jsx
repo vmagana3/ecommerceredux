@@ -1,4 +1,3 @@
-import {FaCcVisa, FaCcMastercard, FaCcPaypal, FaFacebook, FaInstagramSquare } from 'react-icons/fa';
 export default function Footer(){
     return(
         <nav class="navbar  navbar-dark bg-dark text-white row m-0 pl-5 pr-5 pt-4 pb-4">
@@ -12,7 +11,7 @@ export default function Footer(){
                 </div>
 
                 <div className='col-lg-1'>
-                    <p>Follow Us</p>  
+                    <p className='text-center'>Follow Us</p>  
                     <div className='d-flex justify-content-between'>
                         <img src={require('../utils/images/facebook.png')} style={{width:'40px', height:'40px'}} alt="facebook" />
                         <img src={require('../utils/images/instagram.png')} style={{width:'40px', height:'40px'}} alt="instagram" />

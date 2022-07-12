@@ -5,7 +5,7 @@ export default function DetailsModal({ selectedProduct, closeModal}){
     const {title, price, description, image, } = selectedProduct;
     const [counter, setCounter] = useState(1);
     return(
-        <div className="modal d-block" id="exampleModalCenter" tabIndex="-1" style={{backgroundColor:'rgba(0, 0, 0, 0.3)'}}>
+        <div className="modal d-block" id="exampleModalCenter" tabIndex="-1" style={{backgroundColor:'rgba(0, 0, 0, 0.3)', overflowY: 'scoll'}}>
             <div className="modal-dialog modal-dialog-centered" role="document">
                 <div className="modal-content">
                 <div className="modal-header">
@@ -29,7 +29,7 @@ export default function DetailsModal({ selectedProduct, closeModal}){
                 </div>
                     <div className="modal-footer d-flex justify-content-between">   
                         <div className="d-flex justify-content-between align-items-center w-25">
-                            <button className="btn btn-sm btn-info" onClick={()=>setCounter(counter - 1)} disabled={counter === 0 ? true : false}>
+                            <button className="btn btn-sm btn-info" onClick={()=>setCounter(counter - 1)} disabled={counter <= 1 ? true : false}>
                                 <FaMinus/>
                             </button>                        
                             <p className="h3">{counter}</p>
@@ -38,7 +38,7 @@ export default function DetailsModal({ selectedProduct, closeModal}){
                             </button>                            
                         </div>     
                         <div className="w-50 d-flex justify-content-around">
-                            <button type="button" className="btn btn-success" data-dismiss="modal" onClick={closeModal}>Add to cart</button>
+                            <button type="button" className="btn btn-success d-flex align-items-center" data-dismiss="modal" onClick={closeModal}><FaPlus className="mr-2"/>Add to cart</button>
                             <button type="button" className="btn btn-secondary" data-dismiss="modal" onClick={closeModal}>Close</button>                    
                         </div>                                                           
                     </div>
