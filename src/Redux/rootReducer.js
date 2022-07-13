@@ -29,13 +29,13 @@ const globalState = (state = INITIAL_STATE, {type, payload})=>{
         case TYPE.SAGA_GET_CATEGORIES:
             return{
                 ...state,
-                loadingCategories: true,
-                categories:payload,                
+                loadingCategories: true,                               
             }
 
         case TYPE.SET_CATEGORIES:
             return{
                 ...state,
+                categories:payload, 
                 loadingCategories: false
             }
         default:

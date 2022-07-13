@@ -13,13 +13,13 @@ export default{
     }),
 
     //Categories actions
-    getApiProducts: (payload)=>({
-        type: TYPE.SAGA_GET_PRODUCTS,
+    getApiCategories: (payload)=>({
+        type: TYPE.SAGA_GET_CATEGORIES,
         payload,
     }),
 
-    setCategores: (payload)=>({
-        type:TYPE.SAGA_GET_PRODUCTS,
+    setCategories: (payload)=>({
+        type:TYPE.SET_CATEGORIES,
         payload,
     })
 };

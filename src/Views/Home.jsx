@@ -11,11 +11,6 @@ import BestProducts from '../Components/Home/BestProducts';
 
 
 export default function Home(){
-    const dispatch = useDispatch();
-
-    useEffect(()=>{
-        dispatch(actions.getApiProducts());
-    },[])
 
     return(
         <div className="d-flex flex-column justify-content-center align-items-center m-5">

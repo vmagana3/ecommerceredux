@@ -1,5 +1,10 @@
+import {useDispatch, useSelector} from 'react-redux';
+
 import {FcPaid, FcShop} from 'react-icons/fc';
 export default function Menu(){
+
+    const categories = useSelector((state)=>state.categories);
+
     return(
         <>
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark row m-0">                
@@ -24,9 +29,9 @@ export default function Menu(){
                                 Categories
                             </a>
                             <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a className="dropdown-item" href="/">Categorie 1</a>
-                                <a className="dropdown-item" href="/">Categorie 2</a>                                
-                                <a className="dropdown-item" href="#">Categorie 3</a>
+                                {categories.length ? categories.map((item, index)=>(
+                                    <a className="dropdown-item" href="/" key={index}>{item.toUpperCase()}</a>
+                                )) : <a className="dropdown-item" href="/">Loading categories . . .</a>}                                                                                                                            
                             </div>
                         </li>                        
                     </ul>

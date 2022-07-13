@@ -1,5 +1,11 @@
+import { useState, useEffect } from 'react';
+import {useDispatch} from 'react-redux';
+
 //React router
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
+
+//Action creator
+import actions from '../Redux/actions';
 
 //Components
 import Menu from "../Components/Menu";
@@ -8,6 +14,14 @@ import Home from '../Views/Home';
 import Cart from '../Components/Cart';
 
 export default function Main(){
+    
+    const dispatch = useDispatch();
+
+    useEffect(()=>{
+        dispatch(actions.getApiProducts());
+        dispatch(actions.getApiCategories());
+    },[]);
+
     return(
         <div>
             <Menu/>
