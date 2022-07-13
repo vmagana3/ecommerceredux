@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 //Redux hooks
 import { useSelector } from 'react-redux';
@@ -64,7 +63,7 @@ export default function BestProducts(){
             ): null}  
 
             <div className='w-50 d-flex align-self-center justify-content-center align-items-center mb-5'>
-                <a href='#' className=' h1 text-center font-weight-light mb-5'>See All Products</a>                  
+                <a href='/products' className=' h1 text-center font-weight-light mb-5'>See All Products</a>                  
                 <FaArrowRight size={40} className="ml-3 mb-5"/>
             </div>
 

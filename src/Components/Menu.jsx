@@ -30,7 +30,7 @@ export default function Menu(){
                             </a>
                             <div className="dropdown-menu" aria-labelledby="navbarDropdown">
                                 {categories.length ? categories.map((item, index)=>(
-                                    <a className="dropdown-item" href="/" key={index}>{item.toUpperCase()}</a>
+                                    <a className="dropdown-item" href={`/products/${item.replace(/ /g, "")}`} key={index}>{item.toUpperCase()}</a>
                                 )) : <a className="dropdown-item" href="/">Loading categories . . .</a>}                                                                                                                            
                             </div>
                         </li>                        

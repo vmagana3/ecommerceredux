@@ -1,8 +1,4 @@
-import { useEffect } from 'react';
-//Redux Hooks
-import { useDispatch } from 'react-redux';
-//Action creators
-import actions from '../Redux/actions';
+
 //Components
 import HowTo from '../Components/Home/HowTo';
 import SubscribeUs from '../Components/Home/SubscribeUs';
