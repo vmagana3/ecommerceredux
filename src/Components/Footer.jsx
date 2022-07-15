@@ -1,6 +1,6 @@
 export default function Footer(){
     return(
-        <nav class="navbar  navbar-dark bg-dark text-white row m-0 pl-5 pr-5 pt-4 pb-4">
+        <nav className="navbar  navbar-dark bg-dark text-white row m-0 pl-5 pr-5 pt-4 pb-4">
                 <div className='col-lg-2'>
                     <p className='h6 font-weight-light'>Pay Methods</p>
                     <div className='d-flex justify-content-between'>

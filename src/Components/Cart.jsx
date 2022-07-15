@@ -2,8 +2,8 @@ export default function Cart(){
     return(
         <div className="d-flex flex-column mt-5 mb-5">
             <div className="w-100 p-5">
-                <table class="table">
-                    <thead class="thead-dark">
+                <table className="table">
+                    <thead className="thead-dark">
                         <tr>
                             <th scope="col">Product</th>
                             <th scope="col">Qantity</th>
