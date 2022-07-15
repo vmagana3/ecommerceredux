@@ -5,7 +5,7 @@ export default function ProductCard({title, price, image, cardClicked}){
     return(
         <div className="col-lg-4 d-flex flex-column justify-content-center align-items-center mt-5 mb-5" onClick={cardClicked}>
             <div className="w-25 h-50 d-flex justify-content-center align-items-center">
-                <img className="card-img-top" src={image} alt="Card image cap"/>
+                <img className="card-img-top" src={image} alt="Card image cap"style={{cursor:'pointer'}}/>
             </div>            
             <div className="card-body h-50 d-flex flex-column justify-content-around align-items-center">
                 <h5 className="card-title text-center">{title}</h5>

@@ -1,9 +1,44 @@
+import { useState, useEffect } from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 
 import {FcPaid, FcShop} from 'react-icons/fc';
 export default function Menu(){
 
     const categories = useSelector((state)=>state.categories);
+    const products = useSelector((state)=>state.products);
+
+    const [state, setState] = useState({
+        allProducts:[],
+        listToShow:[],
+    });
+
+    const searchProducts = (e)=>{
+        const {value} = e.target;
+        if(value){
+            const findedProducts = [];
+            state.allProducts.forEach((product)=>{
+                if(product.title.toLowerCase().includes(value)){
+                    findedProducts.push(product);
+                }            
+            });
+            setState({
+                ...state,
+                listToShow: findedProducts,
+            });
+        }else{
+            setState({
+                ...state,
+                listToShow: [],
+            });            
+        }
+    }
+
+    useEffect(() => {
+        setState({
+            ...state,
+            allProducts: products,
+        });
+    }, [products]);
 
     return(
         <>
@@ -36,8 +71,15 @@ export default function Menu(){
                         </li>                        
                     </ul>
                     
-                    <div className='col-lg-9 d-flex'>
-                        <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
+                    <div className='col-lg-9 d-flex justify-content-around'>
+                        <div className='w-75'>
+                            <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" onChange={searchProducts}/>                                                                         
+                            <div className={state.listToShow.length ? 'text-light p-3':'d-none'} style={{position:'absolute', zIndex:100, backgroundColor:'#EBEBEB'}}>
+                                {state.listToShow.length ? state.listToShow.map((item,index)=>(
+                                    <p className='text-dark' value={item.id} key={index}>{item.title.substring(0,100)}</p>
+                                )): null}                                
+                            </div>
+                        </div>                        
                         <button className="btn btn-info my-2 my-sm-0" type="submit">Search</button>
                     </div>                       
 

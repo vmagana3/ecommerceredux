@@ -37,8 +37,7 @@ export default function BestProducts(){
                                     price={item.price}                                    
                                     image={item.image} 
                                     description={item.description} 
-                                    cardClicked = {()=>{
-                                        console.log('cloked')
+                                    cardClicked = {()=>{                                        
                                         setState({
                                             showModal: true,
                                             selectedProduct:item
