@@ -61,7 +61,8 @@ export default function Products(){
                         title={item.title}  
                         price={item.price}                                    
                         image={item.image} 
-                        description={item.description}     
+                        description={item.description}
+                        rate={item.rating.rate}     
                         cardClicked = {()=>{                                        
                             setState({
                                 ...state,

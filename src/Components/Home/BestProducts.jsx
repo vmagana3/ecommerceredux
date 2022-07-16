@@ -36,6 +36,7 @@ export default function BestProducts(){
                                     title={item.title}  
                                     price={item.price}                                    
                                     image={item.image} 
+                                    rate={item.rating.rate}
                                     description={item.description} 
                                     cardClicked = {()=>{                                        
                                         setState({
