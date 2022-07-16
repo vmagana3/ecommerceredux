@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-
 import {FcPaid, FcShop} from 'react-icons/fc';
+import SearchList from './SharedComponents/SearchList';
+
 export default function Menu(){
 
     const categories = useSelector((state)=>state.categories);
@@ -71,16 +72,11 @@ export default function Menu(){
                         </li>                        
                     </ul>
                     
-                    <div className='col-lg-9 d-flex justify-content-around'>
-                        <div className='w-75'>
-                            <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" onChange={searchProducts}/>                                                                         
-                            <div className={state.listToShow.length ? 'text-light p-3':'d-none'} style={{position:'absolute', zIndex:100, backgroundColor:'#EBEBEB'}}>
-                                {state.listToShow.length ? state.listToShow.map((item,index)=>(
-                                    <p className='text-dark' value={item.id} key={index}>{item.title.substring(0,100)}</p>
-                                )): null}                                
-                            </div>
-                        </div>                        
-                        <button className="btn btn-info my-2 my-sm-0" type="submit">Search</button>
+                    <div className='col-lg-9'>
+                        <SearchList
+                            items = {state.listToShow} 
+                            searchProducts = {searchProducts}                       
+                        />                        
                     </div>                       
 
                     <div className='col-lg-1 d-flex justify-content-center'>

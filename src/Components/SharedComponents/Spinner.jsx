@@ -4,7 +4,7 @@ export default function Spinner(){
         <div className="d-flex justify-content-center w-100">
             <div className='mainLoader'>
                 <div className='spinner'></div>
-                <h4 className='text-dark'>Loading Products</h4>
+                <h4 className='text-dark mt-5'>Loading Products</h4>
             </div>
         </div>        
     );
