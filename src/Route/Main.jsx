@@ -25,15 +25,17 @@ export default function Main(){
 
     return(
         <div>
-            <Menu/>
+            
             <BrowserRouter>
+                <Menu/>
                 <Routes>
                     <Route path='/' element={<Home/>}></Route>
                     <Route path='/cart' element={<Cart/>}></Route> 
                     <Route path='/products/:category' element={<Products/>}></Route>                    
                 </Routes>
+                <Footer/>
             </BrowserRouter>
-            <Footer/>
+            
         </div>        
     );
 };

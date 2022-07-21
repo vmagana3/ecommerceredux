@@ -30,13 +30,13 @@ export default function BestProducts(){
                     </div>
                 ) : (
                         <div className='w-100 row m-0'>
-                            {products.length ? products.map((item, index)=>(
+                            {products.length ? products.map((item, index)=>(                                
                                 <ProductCard
                                     key={index}
+                                    productKey={item.id}
                                     title={item.title}  
                                     price={item.price}                                    
-                                    image={item.image} 
-                                    rate={item.rating.rate}
+                                    image={item.image}                                     
                                     description={item.description} 
                                     cardClicked = {()=>{                                        
                                         setState({

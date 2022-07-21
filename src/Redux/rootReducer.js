@@ -4,6 +4,8 @@ const INITIAL_STATE = {
     products:[],
     loadingProducts:false,
 
+    findedProducts:[],
+
     categories:[],
     loadingCategories:false,
 
@@ -26,6 +28,13 @@ const globalState = (state = INITIAL_STATE, {type, payload})=>{
                 loadingProducts: false,                
             }
 
+        case TYPE.SET_FINDED_PRODUCTS:
+            return{
+                ...state,
+                findedProducts:payload
+
+            }
+
         case TYPE.SAGA_GET_CATEGORIES:
             return{
                 ...state,
@@ -37,6 +46,11 @@ const globalState = (state = INITIAL_STATE, {type, payload})=>{
                 ...state,
                 categories:payload, 
                 loadingCategories: false
+            }
+        case TYPE.ADD_CART_ITEM:
+            return{
+                ...state,
+                cart: payload
             }
         default:
             return{

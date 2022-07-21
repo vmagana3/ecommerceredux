@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
-import {useDispatch, useSelector} from 'react-redux';
+import {useSelector} from 'react-redux';
 import {FcPaid, FcShop} from 'react-icons/fc';
 import SearchList from './SharedComponents/SearchList';
+import { Link } from "react-router-dom";
 
 export default function Menu(){
 
@@ -49,24 +50,23 @@ export default function Menu(){
                     <span className="navbar-toggler-icon"></span>
                 </button>
 
-                <a className="navbar-brand col-lg-1 d-flex flex-column align-items-center" href="/">
+                
+
+                <Link className="navbar-brand col-lg-1 d-flex flex-column align-items-center" to={'/'}>
                     My Store
                     <FcShop size={50}/>
-                </a>
+                </Link>
 
                 <div className="collapse navbar-collapse col-lg-11" id="navbarSupportedContent">
 
-                    <ul className="navbar-nav mr-auto col-lg-2">
-                        <li className="nav-item active">
-                            <a className="nav-link" href="/">Home <span className="sr-only">(current)</span></a>
-                        </li>
+                    <ul className="navbar-nav mr-auto col-lg-2">                        
                         <li className="nav-item dropdown">
                             <a className="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Categories
                             </a>
                             <div className="dropdown-menu" aria-labelledby="navbarDropdown">
                                 {categories.length ? categories.map((item, index)=>(
-                                    <a className="dropdown-item" href={`/products/${item.replace(/ /g, "")}`} key={index}>{item.toUpperCase()}</a>
+                                       <Link className="dropdown-item" to={`/products/${item.replace(/ /g, "")}`} key={index}>{item.toUpperCase()}</Link>
                                 )) : <a className="dropdown-item" href="/">Loading categories . . .</a>}                                                                                                                            
                             </div>
                         </li>                        
@@ -80,10 +80,10 @@ export default function Menu(){
                     </div>                       
 
                     <div className='col-lg-1 d-flex justify-content-center'>
-                        <a href="/cart" className='d-flex flex-column justify-content-center align-items-center'>
+                        <Link to={'/cart'} className='d-flex flex-column justify-content-center align-items-center'>
                             <FcPaid size={35} title="shopingcart"/>                            
                             <span className='text-light font-weight-bold'>$ 0.0</span>
-                        </a>                                                
+                        </Link>                                                
                     </div>                
                 </div>
             </nav>

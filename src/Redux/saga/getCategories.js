@@ -6,7 +6,6 @@ export default function* handleGetCategories(payload){
     try{
         const data = yield call(getCategories);
         if(data){
-            console.log("[DEBUG] --> CATEGORIAS OBTENIDAS CORECTAMENTE");
             yield put(actions.setCategories(data));         
         }
     }catch(e){

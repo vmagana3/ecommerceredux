@@ -21,5 +21,17 @@ export default{
     setCategories: (payload)=>({
         type:TYPE.SET_CATEGORIES,
         payload,
+    }),
+
+    //setFindedProducts
+    setFindedProducts:(payload)=>({
+        type:TYPE.SET_FINDED_PRODUCTS,
+        payload,
+    }),
+
+    //addCartItem
+    addCartItem: (payload)=>({
+        type:TYPE.ADD_CART_ITEM,
+        payload
     })
 };

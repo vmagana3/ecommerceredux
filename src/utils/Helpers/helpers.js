@@ -1,6 +1,5 @@
 const orderProducts = (orderBy, productsArray)=>{    
     if(orderBy === 'pricecheap'){
-        console.log("pricecheap");
         return productsArray.sort((a, b)=>{
             if(a.price < b.price) {               
                 return -1;
@@ -13,7 +12,6 @@ const orderProducts = (orderBy, productsArray)=>{
     }
 
     if(orderBy === 'priceexpensive'){
-        console.log("priceexpensive");
         return productsArray.sort((a, b)=>{
             if(a.price < b.price) {               
                 return 1;
@@ -26,7 +24,6 @@ const orderProducts = (orderBy, productsArray)=>{
     }
 
     if(orderBy === 'rating'){
-        console.log("rating");
         return productsArray.sort((a, b)=>{
             if(a.rating.rate < b.rating.rate) {
                 return 1;
@@ -37,7 +34,21 @@ const orderProducts = (orderBy, productsArray)=>{
               return 0;            
         });
     }
-}
+};
+
+/* const modifyCart = (currentCart, productId, productName, productPrice, productQantity)=>{
+  const cartModified = [];
+
+  const newItem = {
+    productId,
+    productName,
+    productPrice,
+    productQantity
+  };
+
+  cartModified.push(newItem);
+  return cartModified;
+} */
 
 export{
     orderProducts,

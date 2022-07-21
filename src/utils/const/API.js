@@ -7,7 +7,6 @@ async function getProducts(){
 };
 
 async function getCategories(){
-    console.log(`${constAPI.urlBaseApi}/categories`)
     const response = await fetch(`${constAPI.urlBaseApi}/products/categories`);
     const data = await response.json();
     return data;

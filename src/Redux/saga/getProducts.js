@@ -6,7 +6,6 @@ export default function* handleGetProducts(payload){
     try{
         const data = yield call(getProducts);
         if(data){
-            console.log("[DEBUG] --> PRODUCTOS OBTENIDOS CORECTAMENTE");
             yield put(actions.setProducts(data));         
         }
     }catch(e){
