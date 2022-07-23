@@ -10,6 +10,7 @@ const INITIAL_STATE = {
     loadingCategories:false,
 
     cart:[],
+    cartTotalProducts:0,
 
 };
 
@@ -46,6 +47,11 @@ const globalState = (state = INITIAL_STATE, {type, payload})=>{
                 ...state,
                 categories:payload, 
                 loadingCategories: false
+            }
+        case TYPE.CHNAGE_TOTAL_CART_PRODUCTS:
+            return{
+                ...state,
+                cartTotalProducts: payload
             }
         case TYPE.ADD_CART_ITEM:
             return{

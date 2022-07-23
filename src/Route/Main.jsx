@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import {useDispatch} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 
 //React router
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
@@ -17,6 +17,7 @@ import Products from '../Components/Products/Products';
 export default function Main(){
 
     const dispatch = useDispatch();
+    const cart = useSelector((state)=>state.cart);
 
     useEffect(()=>{
         dispatch(actions.getApiProducts());

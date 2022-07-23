@@ -45,6 +45,8 @@ export default function DetailsModal({ selectedProduct, closeModal}){
                 dispatch(actions.addCartItem(thisContextCart));
             }
         }
+        
+        closeModal();
     };
 
     useEffect(()=>{

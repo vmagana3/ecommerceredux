@@ -1,3 +1,4 @@
+
 const orderProducts = (orderBy, productsArray)=>{    
     if(orderBy === 'pricecheap'){
         return productsArray.sort((a, b)=>{
@@ -36,20 +37,24 @@ const orderProducts = (orderBy, productsArray)=>{
     }
 };
 
-/* const modifyCart = (currentCart, productId, productName, productPrice, productQantity)=>{
-  const cartModified = [];
+const getCartTotal = (cart)=>{
+  let total = 0;
+  cart.forEach((product)=>{
+    total = total + (product.price*product.qantity);
+  });
+  return total;
+}
 
-  const newItem = {
-    productId,
-    productName,
-    productPrice,
-    productQantity
-  };
-
-  cartModified.push(newItem);
-  return cartModified;
-} */
+const getCartTotalEnvio = (cart)=>{
+  let total = 0;
+  cart.forEach((product)=>{
+    total = total + (product.price*product.qantity);
+  });
+  return total + 99;
+}
 
 export{
     orderProducts,
+    getCartTotal,
+    getCartTotalEnvio
 }

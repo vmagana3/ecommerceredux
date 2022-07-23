@@ -3,11 +3,14 @@ import {useSelector} from 'react-redux';
 import {FcPaid, FcShop} from 'react-icons/fc';
 import SearchList from './SharedComponents/SearchList';
 import { Link } from "react-router-dom";
+import { getCartTotal } from '../utils/Helpers/helpers';
 
 export default function Menu(){
 
     const categories = useSelector((state)=>state.categories);
     const products = useSelector((state)=>state.products);
+    const cartLength = useSelector((state)=>state.cartTotalProducts);
+    const cart = useSelector((state)=>state.cart);
 
     const [state, setState] = useState({
         allProducts:[],
@@ -50,8 +53,6 @@ export default function Menu(){
                     <span className="navbar-toggler-icon"></span>
                 </button>
 
-                
-
                 <Link className="navbar-brand col-lg-1 d-flex flex-column align-items-center" to={'/'}>
                     My Store
                     <FcShop size={50}/>
@@ -81,8 +82,9 @@ export default function Menu(){
 
                     <div className='col-lg-1 d-flex justify-content-center'>
                         <Link to={'/cart'} className='d-flex flex-column justify-content-center align-items-center'>
-                            <FcPaid size={35} title="shopingcart"/>                            
-                            <span className='text-light font-weight-bold'>$ 0.0</span>
+                            <div className='badge badge-pill badge-warning'>{cartLength}</div>              
+                            <FcPaid size={35} title="shopingcart"/>                                          
+                            <span className='text-light font-weight-bold'>${getCartTotal(cart)}</span>
                         </Link>                                                
                     </div>                
                 </div>

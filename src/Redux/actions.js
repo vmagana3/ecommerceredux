@@ -33,5 +33,10 @@ export default{
     addCartItem: (payload)=>({
         type:TYPE.ADD_CART_ITEM,
         payload
+    }),
+
+    changeCartTotalProducts: (payload)=>({
+        type: TYPE.CHNAGE_TOTAL_CART_PRODUCTS,
+        payload
     })
 };
