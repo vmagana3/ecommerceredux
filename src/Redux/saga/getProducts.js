@@ -5,7 +5,8 @@ import { getProducts } from '../../utils/const/API';
 export default function* handleGetProducts(payload){
     try{
         const data = yield call(getProducts);
-        if(data){
+        if(data){           
+            data.forEach((product)=>product.price = Math.trunc(product.price));        
             yield put(actions.setProducts(data));         
         }
     }catch(e){
