@@ -4,7 +4,7 @@ import HowTo from '../Components/Home/HowTo';
 import SubscribeUs from '../Components/Home/SubscribeUs';
 import BestProducts from '../Components/Home/BestProducts';
 import Swal from 'sweetalert2'
-import withReactContent from 'sweetalert2-react-content'
+import withReactContent from 'sweetalert2-react-content';
 import { useEffect } from 'react';
 
 
