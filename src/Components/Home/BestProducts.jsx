@@ -21,7 +21,7 @@ export default function BestProducts(){
     });
 
     return(   
-        <div className='w-100 d-flex flex-column mt-5 mb-5'>            
+        <div className='w-100 d-flex flex-column mt-5 mb-5 pb-5'>            
             <h1 className='w-100 display-4'>Our Best products</h1>
             {
                 loadingProducts ? (
@@ -62,7 +62,7 @@ export default function BestProducts(){
                 />
             ): null}  
 
-            <div className='w-50 d-flex align-self-center justify-content-center align-items-center mb-5'>
+            <div className='w-50 d-flex align-self-center justify-content-center align-items-center mt-5'>
                 <a href='/products/all' className=' h1 text-center font-weight-light mb-5'>See All Products</a>                  
                 <FaArrowRight size={40} className="ml-3 mb-5"/>
             </div>

@@ -1,7 +1,7 @@
 import {FcCursor, FcInTransit ,FcShipped, FcCheckmark, FcMoneyTransfer} from 'react-icons/fc';
 export default function HowTo(){
     return(
-        <div className="d-flex flex-column justify-content-center align-items-center w-100 mt-5 mb-5">
+        <div className="d-flex flex-column justify-content-center align-items-center w-100 mt-5 mb-5 pt-5 pb-5">
 
             <div className='mb-5'>
                 <h1 className='display-4'>Easy to buy</h1>

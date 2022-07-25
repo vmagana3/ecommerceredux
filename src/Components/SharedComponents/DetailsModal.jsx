@@ -2,12 +2,25 @@ import { useState, useEffect } from "react";
 import { FaPlus, FaMinus } from "react-icons/fa";
 import {useDispatch, useSelector} from 'react-redux';
 import actions from "../../Redux/actions";
+import Swal from 'sweetalert2';
 
 export default function DetailsModal({ selectedProduct, closeModal}){
 
     const {id, title, price, description, image } = selectedProduct;
     const cart = useSelector((state) => state.cart);
     const dispatch = useDispatch();
+
+    const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 2000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.addEventListener('mouseenter', Swal.stopTimer)
+          toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+      })
 
     const [state, setState] = useState({
         counter:1,
@@ -29,6 +42,10 @@ export default function DetailsModal({ selectedProduct, closeModal}){
         if(!thisContextCart.length){
             thisContextCart.push(newItem);            
             dispatch(actions.addCartItem(thisContextCart));
+            Toast.fire({
+                icon: 'success',
+                title: 'Product added to cart'
+            });
             return null;
         }else{
             const productIds = [];
@@ -38,11 +55,19 @@ export default function DetailsModal({ selectedProduct, closeModal}){
                     if(item.productId === newItem.productId){
                         item.qantity = item.qantity + state.counter;
                         dispatch(actions.addCartItem(thisContextCart));
+                        Toast.fire({
+                            icon: 'success',
+                            title: 'Product added to cart'
+                        });
                     }
                 })
             }else{
                 thisContextCart.push(newItem);
                 dispatch(actions.addCartItem(thisContextCart));
+                Toast.fire({
+                    icon: 'success',
+                    title: 'Product added to cart'
+                });
             }
         }
         

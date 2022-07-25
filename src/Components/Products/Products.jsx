@@ -7,11 +7,12 @@ import Spinner from '../SharedComponents/Spinner';
 import DetailsModal from '../SharedComponents/DetailsModal';
 import { orderProducts } from '../../utils/Helpers/helpers';
 
+
 export default function Products(){
 
     const products = useSelector((state)=>state.products);
     const findedProducts = useSelector((state)=>state.findedProducts);
-    const {category} = useParams();
+    const {category} = useParams();    
 
     const [state, setState] = useState({
         list:[],
@@ -55,7 +56,7 @@ export default function Products(){
     };
 
     return(
-        <div className='w-100 d-flex flex-column mt-5 mb-5 p-5'>
+        <div className='w-100 d-flex flex-column mt-5 mb-5 p-5'>                        
             <FiltersBar
                  setCategory = {(e)=>changeCategory(e.target.value)}  
                  setOrderBy = {(e)=>orderProductsList(e.target.value)}   
