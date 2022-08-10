@@ -42,10 +42,7 @@ export default function DetailsModal({ selectedProduct, closeModal}){
         if(!thisContextCart.length){
             thisContextCart.push(newItem);            
             dispatch(actions.addCartItem(thisContextCart));
-            Toast.fire({
-                icon: 'success',
-                title: 'Product added to cart'
-            });
+           
             return null;
         }else{
             const productIds = [];
@@ -84,7 +81,7 @@ export default function DetailsModal({ selectedProduct, closeModal}){
 
     return(
         <div className="modal d-block" id="exampleModalCenter" tabIndex="-1" style={{backgroundColor:'rgba(0, 0, 0, 0.3)', overflowY: 'scoll'}}>
-            <div className="modal-dialog modal-dialog-centered" role="document">
+            <div className="modal-dialog modal-dialog-centered modal-lg" role="document">
                 <div className="modal-content">
                 <div className="modal-header">
                     <button type="button" className="close" data-dismiss="modal" aria-label="Close"  onClick={closeModal}>
@@ -93,20 +90,20 @@ export default function DetailsModal({ selectedProduct, closeModal}){
                 </div>                
                 <div className="modal-body text-dark">
                     <div className="d-flex justify-content-center align-items-center">
-                        <img className="w-25" src={image} alt="" />                                                                        
+                        <img src={image} alt="" style={{width:'15%'}}/>                                                                        
                     </div>
                     <div className="text-center">
-                        <p className="h2">{title}</p>
+                        <p className="h4">{title}</p>
                     </div> 
-                    <div className="">
-                        <p>{description}</p>                        
+                    <div>
+                        <p className="font-weight-light">{description}</p>                        
                     </div>          
                     <div className="">
-                        <p className="font-weight-bold h2">${price}</p>                        
+                        <p className="font-weight-bold h4">${price}</p>                        
                     </div>                                           
                 </div>
                     <div className="modal-footer d-flex justify-content-between">   
-                        <div className="d-flex justify-content-between align-items-center w-25">
+                        <div className="d-flex justify-content-between align-items-center">
                             <button className="btn btn-sm btn-info" onClick={()=>setState({
                                     ...state,
                                     counter: state.counter - 1
@@ -115,7 +112,7 @@ export default function DetailsModal({ selectedProduct, closeModal}){
                                 <FaMinus
                             />
                             </button>                        
-                            <p className="h3">{state.counter}</p>
+                            <p className="h3 ml-3 mr-3">{state.counter}</p>
                             <button className="btn btn-sm btn-info" onClick={()=>setState({
                                     ...state,
                                     counter: state.counter + 1
@@ -123,8 +120,8 @@ export default function DetailsModal({ selectedProduct, closeModal}){
                                 <FaPlus/>
                             </button>                            
                         </div>     
-                        <div className="w-50 d-flex justify-content-around">
-                            <button type="button" className="btn btn-success d-flex align-items-center" data-dismiss="modal" onClick={addToCart}><FaPlus className="mr-2"/>Add to cart</button>
+                        <div className="w-50 d-flex justify-content-end">
+                            <button type="button" className="btn btn-success d-flex align-items-center mr-3" data-dismiss="modal" onClick={addToCart}><FaPlus className="mr-2"/>Add to cart</button>
                             <button type="button" className="btn btn-secondary" data-dismiss="modal" onClick={closeModal}>Close</button>                    
                         </div>                                                           
                     </div>

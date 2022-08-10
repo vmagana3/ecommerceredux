@@ -13,6 +13,7 @@ import Footer from "../Components/Footer";
 import Home from '../Views/Home';
 import Cart from '../Components/Cart';
 import Products from '../Components/Products/Products';
+import Pay from '../Components/Pay';
 
 export default function Main(){
 
@@ -32,7 +33,8 @@ export default function Main(){
                 <Routes>
                     <Route path='/' element={<Home/>}></Route>
                     <Route path='/cart' element={<Cart/>}></Route> 
-                    <Route path='/products/:category' element={<Products/>}></Route>                    
+                    <Route path='/products/:category' element={<Products/>}></Route>   
+                    <Route path='/pay' element={<Pay/>}></Route>                    
                 </Routes>
                 <Footer/>
             </BrowserRouter>

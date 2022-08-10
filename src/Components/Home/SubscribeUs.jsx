@@ -9,18 +9,22 @@ export default function SubscribeUs(){
     });
 
     let emailRegex = /[A-Za-z0-9/.]+@[a-z]+\.+[a-zA-Z]{1,5}/;
-
+    
     const MySwal = withReactContent(Swal);
 
     const subscribeUs = ()=>{
         if(emailRegex.test(state.email)){
+            setState({
+                ...state,
+                email:''
+            })
             MySwal.fire({
                 icon: 'success',
                 title: 'Subscribed successfully!',
                 text: 'You will receive info about our best promotions and products',
                 timer:3000,
                 showConfirmButton: false, 
-            })  
+            });
         }else{
             setState({
                 ...state,
@@ -35,7 +39,7 @@ export default function SubscribeUs(){
             <h4 className="font-weight-light">Subscribe to receive info about our best promotions and products</h4>
             <div className="d-flex justify-content-around w-75">
                 <div className="input-group mt-2">
-                    <input type="text" className="form-control" placeholder="Your Email" aria-label="Recipient's username" aria-describedby="basic-addon2" onChange={(e)=>setState({
+                    <input type="text" className="form-control" value={state.email} placeholder="Your Email" aria-label="Recipient's username" aria-describedby="basic-addon2" onChange={(e)=>setState({
                         email:e.target.value
                     })}/>
                         <div className="input-group-append">

@@ -4,7 +4,8 @@ import { useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
 import NoProductsCart from "./SharedComponents/NoProductsCart";
 import {FaTrashAlt} from 'react-icons/fa';
-import actions from "../Redux/actions";
+import actions from "../Redux/actions"; 
+import {Link} from 'react-router-dom';
 
 export default function Cart(){
 
@@ -100,7 +101,7 @@ export default function Cart(){
                                 <p>${state.finalTotal}</p>                    
                             </div>  
                             <div className="d-flex justify-content-end">
-                                <button className="btn btn-success w-25">Pay</button>                        
+                                <Link className="btn btn-success w-25" to="/pay">Pay</Link>                                       
                             </div>                    
                         </div>
                     </div>
