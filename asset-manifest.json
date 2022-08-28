@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/ecommerceredux/static/css/main.6b619aee.css",
-    "main.js": "/ecommerceredux/static/js/main.76d67e91.js",
+    "main.js": "/ecommerceredux/static/js/main.be8d761c.js",
     "index.html": "/ecommerceredux/index.html",
     "main.6b619aee.css.map": "/ecommerceredux/static/css/main.6b619aee.css.map",
-    "main.76d67e91.js.map": "/ecommerceredux/static/js/main.76d67e91.js.map"
+    "main.be8d761c.js.map": "/ecommerceredux/static/js/main.be8d761c.js.map"
   },
   "entrypoints": [
     "static/css/main.6b619aee.css",
-    "static/js/main.76d67e91.js"
+    "static/js/main.be8d761c.js"
   ]
 }
