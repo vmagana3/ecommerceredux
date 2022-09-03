@@ -101,7 +101,7 @@ export default function Cart(){
                                 <p>${state.finalTotal}</p>                    
                             </div>  
                             <div className="d-flex justify-content-end">
-                                <Link className="btn btn-success w-25" to="/pay">Pay</Link>                                       
+                                <Link className="btn btn-success w-25" to="/ecommerceredux/pay">Pay</Link>                                       
                             </div>                    
                         </div>
                     </div>

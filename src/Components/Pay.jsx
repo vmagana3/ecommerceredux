@@ -10,7 +10,7 @@ export default function Pay(){
             {state.showLocationForm ? (
                 <LocationForm/>
             ):(
-                <p>Paypal component</p>
+                <p>Paypal componente</p>
             )}            
         </div>
     )

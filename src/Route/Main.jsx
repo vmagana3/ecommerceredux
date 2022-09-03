@@ -24,21 +24,19 @@ export default function Main(){
         dispatch(actions.getApiProducts());
         dispatch(actions.getApiCategories());
     },[]);
-
+    
     return(
-        <div>
-            
+        <div>                       
             <BrowserRouter>
                 <Menu/>
                 <Routes>
-                    <Route path='/' element={<Home/>}></Route>
-                    <Route path='/cart' element={<Cart/>}></Route> 
-                    <Route path='/products/:category' element={<Products/>}></Route>   
-                    <Route path='/pay' element={<Pay/>}></Route>                    
+                    <Route path='/ecommerceredux' element={<Home/>}></Route>
+                    <Route path='/ecommerceredux/cart' element={<Cart/>}></Route> 
+                    <Route path='/ecommerceredux/products/:category' element={<Products/>}></Route>   
+                    <Route path='/ecommerceredux/pay' element={<Pay/>}></Route>                    
                 </Routes>
                 <Footer/>
             </BrowserRouter>
-            
         </div>        
     );
 };

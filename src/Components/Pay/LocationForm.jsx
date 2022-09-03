@@ -157,7 +157,7 @@ export default function LocationForm(){
         <div className="container d-flex flex-column justify-content-center align-items-center">
             {state.confirmCompleted ? (
                 <div className="p-5 m-5 d-flex flex-column justify-content-center align-items-center">
-                    <Link className="btn btn-info" to="/">Go Home</Link>
+                    <Link className="btn btn-info" to="/ecommerceredux">Go Home</Link>
                     <FaHome className="mt-3 mb-5" size={60}/>
                 </div>                
             ) : (

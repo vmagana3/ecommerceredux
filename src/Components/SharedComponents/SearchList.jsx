@@ -35,10 +35,10 @@ export default function SearchList({items, searchProducts: _searchProducts, clea
         <div className="w-100 d-flex justify-content-around">
             <div className='w-75'>     
                 <div className='d-flex justify-content-between align-items-center'>
-                    <div class="input-group w-75">
-                        <input type="text" class="form-control" placeholder="Search" aria-label="Recipient's username" aria-describedby="basic-addon2" onChange={_searchProducts}/>
-                        <div class="input-group-append">
-                            <button disabled={items.length ? false : true} class="btn btn-secondary d-flex justify-content-center align-items-center" type="button" onClick={_clearInput}>
+                    <div className="input-group w-75">
+                        <input type="text" className="form-control" placeholder="Search" aria-label="Recipient's username" aria-describedby="basic-addon2" onChange={_searchProducts}/>
+                        <div className="input-group-append">
+                            <button disabled={items.length ? false : true} className="btn btn-secondary d-flex justify-content-center align-items-center" type="button" onClick={_clearInput}>
                                 <FaWindowClose/>
                             </button>
                         </div>

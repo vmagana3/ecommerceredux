@@ -9,12 +9,12 @@ export default function FiltersBar({setCategory:_setCategory, setOrderBy: _setOr
                 <button className={currentCategory === `women'sclothing` ? 'btn btn-info' : 'btn btn-outline-info'} value="women'sclothing" onClick={_setCategory}>Women's Clothing</button>
             </div>
             <div className="d-flex justify-content-end w-25">
-               <div class="input-group">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">Order By</label>
+               <div className="input-group">
+                    <div className="input-group-prepend">
+                        <label className="input-group-text" htmlFor="inputGroupSelect01">Order By</label>
                     </div>
-                    <select class="custom-select" id="inputGroupSelect01" onChange={_setOrderBy}>
-                        <option value="options" selected>Options</option>
+                    <select className="custom-select" id="inputGroupSelect01" onChange={_setOrderBy}>
+                        <option value="options">Options</option>
                         <option value="pricecheap">Cheapest</option>
                         <option value="priceexpensive">Expensivest</option>
                         <option value="rating">Rate</option>                        

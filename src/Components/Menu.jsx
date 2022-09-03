@@ -4,6 +4,7 @@ import {FcPaid, FcShop} from 'react-icons/fc';
 import SearchList from './SharedComponents/SearchList';
 import { Link } from "react-router-dom";
 import { getCartTotal } from '../utils/Helpers/helpers';
+import {useLocation} from 'react-router-dom';
 
 export default function Menu(){
 
@@ -11,6 +12,7 @@ export default function Menu(){
     const products = useSelector((state)=>state.products);
     const cartLength = useSelector((state)=>state.cartTotalProducts);
     const cart = useSelector((state)=>state.cart);
+    const {pathname} = useLocation();
 
     const [state, setState] = useState({
         allProducts:[],
@@ -53,25 +55,27 @@ export default function Menu(){
                     <span className="navbar-toggler-icon"></span>
                 </button>
 
-                <Link className="navbar-brand col-lg-1 d-flex flex-column align-items-center" to={'/'}>
+                <Link className="navbar-brand col-lg-1 d-flex flex-column align-items-center" to={'/ecommerceredux'}>
                     My Store
                     <FcShop size={50}/>
                 </Link>
 
                 <div className="collapse navbar-collapse col-lg-11" id="navbarSupportedContent">
 
-                    <ul className="navbar-nav mr-auto col-lg-2">                        
+                    {pathname.includes('products') ? null : (
+                        <ul className="navbar-nav mr-auto col-lg-2" >                        
                         <li className="nav-item dropdown">
-                            <a className="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a className="nav-link dropdown-toggle" href="/ecommerceredux" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Categories
                             </a>
                             <div className="dropdown-menu" aria-labelledby="navbarDropdown">
                                 {categories.length ? categories.map((item, index)=>(
-                                       <Link className="dropdown-item" to={`/products/${item.replace(/ /g, "")}`} key={index}>{item.toUpperCase()}</Link>
-                                )) : <a className="dropdown-item" href="/">Loading categories . . .</a>}                                                                                                                            
+                                       <Link className="dropdown-item" to={`/ecommerceredux/products/${item.replace(/ /g, "")}`} key={index}>{item.toUpperCase()}</Link>
+                                )) : <a className="dropdown-item" href="#">Loading categories . . .</a>}                                                                                                                            
                             </div>
                         </li>                        
                     </ul>
+                    )}                    
                     
                     <div className='col-lg-9'>
                         <SearchList
@@ -81,7 +85,7 @@ export default function Menu(){
                     </div>                       
 
                     <div className='col-lg-1 d-flex justify-content-center'>
-                        <Link to={'/cart'} className='d-flex flex-column justify-content-center align-items-center'>
+                        <Link to={'ecommerceredux/cart'} className='d-flex flex-column justify-content-center align-items-center'>
                             <div className='badge badge-pill badge-warning'>{cartLength}</div>              
                             <FcPaid size={35} title="shopingcart"/>                                          
                             <span className='text-light font-weight-bold'>${getCartTotal(cart)}</span>
