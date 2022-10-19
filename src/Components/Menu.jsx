@@ -12,8 +12,8 @@ export default function Menu(){
     const products = useSelector((state)=>state.products);
     const cartLength = useSelector((state)=>state.cartTotalProducts);
     const cart = useSelector((state)=>state.cart);
-    const {pathname} = useLocation();
-
+    const {pathname} = useLocation();    
+    
     const [state, setState] = useState({
         allProducts:[],
         listToShow:[],

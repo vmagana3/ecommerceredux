@@ -22,7 +22,7 @@ export default function Products(){
         selectedProduct:{}
     });
 
-    useEffect(() => {
+    useEffect(() => {        
         if(category === 'finded'){
             setState({
                 ...state,
